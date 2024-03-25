@@ -11,6 +11,29 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.image-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center; 
+			}
+	
+			.image-wrapper {
+				flex: 0 0 auto;
+			}
+			.major h1 {
+        		text-align: center;
+        		font-size: 2em;
+    		}
+
+    /* Media query for screens smaller than 768px (typical mobile devices) */
+    		@media only screen and (max-width: 768px) {
+        		.major h1 {
+            		font-size: 1.5em; /* Adjust the font size for smaller screens */
+        		}
+    		}
+
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -47,13 +70,106 @@
 							<section id="one">
 								<div class="inner">
 									<header class="major">
-										<h1>Coming Soon!🎉</h1>
-									</header>
-									<span class="image main"><img src="images/aleksandr-popov-hTv8aaPziOQ-unsplash.jpg" alt="" /></span>	
-								</div>
+										<h1>ML Model for the Perfect Party Playlist!🎉</h1>
+									</header>									
+									<p style="font-size: 18px;">This research project was implemented using <strong>Python</strong>.
+									<h3>Executive Summary</h3>	
+									<p>Join me in the fascinating journey of exploring the power of data science in crafting the ultimate soundtrack for an unforgettable summer dance party!</p>
+
+									<p>The task was to curate a playlist of 50 songs that would entice the guests to dance at a company's summer party! 💃 You may find the complete code <a href = "https://github.com/annagromovich/ML-model-for-a-perfect-party-playlist/blob/main/ML%20Model%20for%20the%20Perfect%20Party%20Playlist.ipynb" target="_blank">here.</a></p>
+
+										<p><strong>Spotify</strong> dataset (modified from the original <a href="https://www.kaggle.com/datasets/maharshipandya/-spotify-tracks-dataset" target="_blank">source</a> on Kaggle) comprises <strong>20 columns</strong> and <strong>113027 entries</strong>, including the following information:</p>
+										<ul>
+											<li>unique track_id</li>
+											<li>artists</li>
+											<li>album_name</li>
+											<li>track_name</li>
+											<li>track_genre</li>
+											<li>various characteristics of the track: popularity, duration_ms, explicit, danceability, energy, key, loudness, mode, speechiness, acousticness, instrumentalness, liveness, valence, tempo, time_signature</li>
+										</ul>
+
+										<p>In this project, I employed descriptive statistics and data visualization techniques to delve into the dataset, unraveling relationships between various features. Subsequently, I crafted a machine learning model designed to forecast the <strong>danceability</strong> of tracks. After thorough analysis of the model's outcomes, I curated the ultimate 50-song playlist tailored for the ideal summer party. Each track selection was meticulously justified based on both the model's findings and the initial dataset analysis conclusions.</p>
+										<p>The initial analysis showed  <strong>valence</strong> and <strong>loudness</strong> exhibit some positive correlation with danceability. it also revealed genres with the highest average danceability score, among which it was no surprise to find <strong>dancehall</strong>, <strong>latino</strong>, <strong>techno</strong> and <strong>funk</strong>. Furthermore, the analysis demonstrated that tracks with <strong>4/4 time signature</strong>  tend to garner higher danceability ratings.</p>
+										<p>Comparing models, it became evident that boosting algorithm outperformed others, with <strong>LighGBM</strong> exhibiting the most favorable metrics. The <strong>feature importance analysis</strong> of the LightGBM model revealed the most significant features to predict danceability are: <strong>track_genre</strong>, <strong>tempo</strong>, <strong>speechiness</strong>, <strong>valence</strong> and <strong>energy</strong>.</p>
+										<p>The <strong>partial dependence analysis</strong> confirmed the positive correlation between <strong>valence</strong> and danceability. It revealed that the <strong>tempo</strong> of the most danceable tracks typically falls within the range of 100 to 130 beats per minute. Additionally, the analysis indicated that tracks with higher danceability tend to have <strong>speechiness</strong> levels of at least 0.07 and higher. Conversely, for a track to achieve a higher danceability score, the level of <strong>energy</strong> shouldn't exceed 0.7.</p>
+										<p>Given that the model identified <strong>track_genre</strong> as the most significant feature, I made it a focal point while curating the playlist. Specifically, I handpicked around 30 genres with the highest average danceability scores. Additionally, I integrated further constraints provided by the model into the playlist crafting process. This involved selecting tracks with optimal <strong>tempo</strong> and <strong>energy</strong> levels, known to enhance danceability. Moreover, considering both the model and initial data analysis emphasized the importance of <strong>valence</strong> in determining danceability, I chose tracks with a <strong>valence</strong> score of greater than or equal to 1.5 times the average valence score.</p>
+										<p>Although the model didn't emphasize the importance of <strong>popularity</strong> in determining a track's danceability, I decided to incorporate an additional criterion into the playlist curation process. Specifically, I opted to include only those tracks with a popularity rating higher than 65. This decision was based on the practical intuition that people tend to dance more enthusiastically to songs they recognize.</p>
+										<p>The final playlist comprised of <strong>dance, funk, dancehall</strong> and other genres with high average danceaility scores. The playlist includes tracks by artists such as <strong>Bad Bunny, Manuel Turizo, and Maluma</strong>, whose songs get the highest average popularity score and chart-toppers of our era such as <strong>BTS, Doja Cat and The Chainsmokers</strong>.</p>
+										<p>Click <a href="https://youtube.com/playlist?list=PLjyAYjMzZ0FC2nWAMNr9XQamW6IaPsmDG&si=SXMLkOy3RGXMTl6t" target="_blank">here</a> to play the Perfect 50 songs Playlist for you next summer dance party 💃.</p>
+										<h3>Data Analysis</h3>
+										<p>After the data cleaning process, which included handling missing data, erroneous data and deletion of duplicates and outliers we were left with <strong>20 columns and 79894 rows.</strong> </p>
+										<p>The analysis of numeric features allowed us to conclude:</p>
+										<ul>
+											<li>None of the features seem to follow a normal distribution</li>
+											<li><strong>duration_ms</strong> and <strong>speechiness</strong> are right-skewed, while <strong>loudness</strong> is left-skewed</li>
+											<li><strong>popularity, speechiness, acousticness, instrumentalness, liveness</strong> displayed negative asymmetry</li>
+											<li><strong>danceability</strong> and <strong>energy</strong> displayed positive asymmetry.</li>
+										</ul>
+                                        <span class="image main"><img src="images/heatmap.png" alt="" style="max-width: 800px;"/></span>									
+										<p>As the heatmap showed, <strong>danceability</strong> has:</p>
+										<ul>
+											<li>a moderate positive correlation with <strong>valence</strong></li>
+											<li>a weak positive correlation with <strong>loudness</strong></li>
+											<li>a weak negative correlation with <strong>instrumentalness, acousticness, and liveness.</strong></li>
+										</ul>
+										<div class="image-container">
+											<div class="image-wrapper">
+												<img src="images/time_signature.png" alt="" width="500" height="400" />
+											</div>
+											<div class="image-wrapper">
+												<img src="images/genres.png" alt="" width="500" height="400" />
+											</div>
+										</div>
+										<p>Based on the initial analysis, we can conclude a track gets a higher danceability score if:</p>
+										<ul>
+											<li>it has a higher <strong>valence</strong> - it's more positive</li>
+											<li>it's <strong>louder</strong></li>
+											<li>it has <strong>4/4 time signature</strong></li>
+											<li>it has one of the following <strong>genres</strong>: kids, chicago-house, latino, reggaeton, minimal-techno, dancehall, detroit-techno, funk, reggae or children.</li>
+										</ul>
+										<h3>Model Development</h3>
+										<p>Since <strong>danceability</strong> is a continuous numerical variable, regression would be an appropriate machine learning model. Four distinct model types were selected:</p>
+										<ul>
+											<li><strong>Elastic Net</strong> as a linear model combining L1 (Lasso) and L2 (Ridge) regularization techniques</li>
+											<li><strong>Decision Tree Regressor</strong> as a tree-based model</li>
+											<li><strong>Random Forest Regressor</strong> as an ensemble bootstrapping algorithm</li>
+											<li><strong>LGBMRegressor</strong> as an ensemble boosting algorithm.</li>
+										</ul>
+										<p>After thorough hyperparameter tuning models' performance was evaluated through cross-validation.</p>
+										<span class="image main"><img src="images/cross_valid.png" alt=""  style="max-width: 600px; max-height: 500px;"/></span>	
+										<p>As it's seen from the graph, the LGBMRegressor appeared to be a top-performing model, exhibiting the lowest MSE on both train and test sets and the highest R-squared.</p>
+										<p>The examination of residuals supported our choice of the model. The histogram of residuals displays a symmetric bell-shaped curve, characteristic of a normal distribution. Likewise, the residuals plot depicts a random scattering of points around the horizontal line at y=0, indicating that the residuals are evenly distributed across the range of predicted values. These findings are consistent with the assumptions of the regression model and suggest that the model adequately captures the underlying relationships within the data.</p>
+										<span class="image main"><img src="images/resid.png" alt="" style="max-width: 1000px;"/></span>
+										<h3>Model Analysis</h3>	
+										<p>The most important features of the model turned out to be: <strong>track_genre, tempo, speechiness, valence and energy.</strong></p>
+										<span class="image main"><img src="images/feat_import.png" alt="" style="max-width: 700px; max-height: 600px;"/></span>
+										<p>The partial dependence plots suggest that the track with the highest danceability:</p>
+										<ul>
+											<li>has a <strong>tempo</strong> from 100 to 130</li>
+											<li><strong>speechiness</strong> higher than 0.07</li>
+											<li>higher <strong>valence</strong></li>
+											<li><strong>energy</strong> less than 0.7.</li>
+										</ul>
+										<span class="image main"><img src="images/part_dep.png" alt="" style="max-width: 800px;"/></span>
+										<h3>Playlist Curation</h3>
+										<p>The model indicated <strong>track_genre</strong> as the most important feature to predict danceability - it should definitely be taken into account while creating a playlist. To ensure a vibrant party atmosphere, I've meticulously chosen around 30 genres with the highest average danceability scores, omitting some genres that are high in danceability but seem inappropriate for a party, such as <strong>kids, children, sad</strong> or even <strong>disco</strong> (as this one is truly a bit outdated).</p>
+										<p>I've also taken into account the model's recommendations regarding <strong>tempo</strong> and <strong>energy</strong> features.</p>
+										<p>Although the model didn't prioritize <strong>popularity</strong> as a significant factor in danceability prediction, I've opted to include only tracks with a popularity score exceeding 65. This decision is based on the intuition that people are more inclined to dance to familiar tunes.</p>
+										<span class="image main"><img src="images/count_genre.png" alt="" style="max-width: 600px; max-height: 500px;"/></span>
+										<p>It's not surprising our playlist mostly consists of <strong>dancehall</strong>, <strong>dance</strong> and <strong>latino</strong> songs - genres with very high average danceability score, as shown in the initial analysis. The playlist also contains other genres with high danceability, such as <strong>funk, house,</strong> and <strong>reggaeton</strong>.</p>	
+										<p>We've included tracks by <strong>BTS</strong>, one of the most popular artists of our time, which are sure to be a hit with our audience. Additionally, our lineup includes tracks by esteemed artists such as <strong>Doja Cat, Charlie Puth, The Chainsmokers, One Direction and Jennifer Lopez</strong>. </p>
+										<p>Our playlist offers a vibrant mix of songs in English, Spanish (Latino), and Korean (K-pop), guaranteeing our guests an engaging and dynamic experience. Moreover, the <strong>energy</strong> and <strong>tempo</strong> of  all the chosen tracks matches the model's recommendations.</p>
+										<p>These chosen tracks are not only highly popular but also boast impressive predicted and actual danceability scores, setting the stage for an unforgettable dance party. </p>
+										<p><strong>Time to have fun! 🎉</strong></p>
+										<p><strong>You may check the complete code following the link below.</strong></p>
+										<ul class="actions">
+										<li><a href="https://github.com/annagromovich/ML-model-for-a-perfect-party-playlist" class="button next" target="_blank">See details</a></li>
+									</ul>
+																	</div>
 							</section>
 
 					</div>
+
 
 				<!-- Footer -->
 					<footer id="footer">
@@ -74,6 +190,9 @@
 					</footer>
 
 			</div>
+
+			
+			
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
