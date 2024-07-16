@@ -42,6 +42,19 @@
 			.centered-list img {
 				margin-left: 10px; /* Add some space between text and image */
 			}
+			.ml-tools {
+				display: flex;
+				flex-wrap: wrap;
+			}
+			.ml-tools a {
+				flex: 1 0 33.33%; /* Three items per row */
+				text-align: center; /* Center align icons */
+			}
+			@media (min-width: 768px) {
+				.ml-tools a {
+					flex: none; /* Reset flex for larger screens */
+				}
+			}
         </style>
 	</head>
 	<body class="is-preload">
@@ -113,7 +126,7 @@
 													<img alt="" width="40px" src="images/pandas white.ico">
 												</a>
 												<a href="https://numpy.org/" target="_blank">
-													<img alt="" width="36px" src="images/numpy.png">
+													<img alt="" width="35px" src="images/numpy.png">
 												</a>
 											</li>
 											<li><strong>Visualization Tools</strong>: 
@@ -131,21 +144,23 @@
 												</a>
 											</li>
 											<li><strong>Machine Learning Tools</strong>: 
-												<a href="https://scikit-learn.org/stable/" target="_blank">
-													<img alt="" width="74px" src="images/scikitlearn.png">
-												</a>
-												<a href="https://www.statsmodels.org/stable/index.html" target="_blank">
-													<img alt="" width="55px" src="images/stat.svg">
-												</a>
-												<a href="https://www.tensorflow.org/" target="_blank">
-													<img alt="" width="40px" src="images/tensorflow.png">
-												</a>
-												<a href="https://pytorch.org/" target="_blank">
-													<img alt="" width="40px" src="images/pytor.png">
-												</a>
-												<a href="https://spark.apache.org/docs/latest/api/python/index.html" target="_blank">
-													<img alt="" width="40px" src="images/pyspark.png">
-												</a>
+												<div class="ml-tools">
+													<a href="https://scikit-learn.org/stable/" target="_blank">
+														<img alt="" width="74px" src="images/scikitlearn.png">
+													</a>
+													<a href="https://www.statsmodels.org/stable/index.html" target="_blank">
+														<img alt="" width="55px" src="images/stat.svg">
+													</a>
+													<a href="https://www.tensorflow.org/" target="_blank">
+														<img alt="" width="40px" src="images/tensorflow.png">
+													</a>
+													<a href="https://pytorch.org/" target="_blank">
+														<img alt="" width="40px" src="images/pytor.png">
+													</a>
+													<a href="https://spark.apache.org/docs/latest/api/python/index.html" target="_blank">
+														<img alt="" width="40px" src="images/pyspark.png">
+													</a>
+												</div>	
 											</li>										</li>
 											<li><strong>Version Control</strong>:
 												<a href="https://git-scm.com/" target="_blank">
@@ -176,6 +191,8 @@
 													<a href="https://www.datacamp.com/certificate/DA0027631972317" target="_blank">
 														<img alt="" width="120px" src="images/data analyst.png">
 													</a>
+												</li>
+												<li>
 													<a href="https://www.datacamp.com/certificate/SQA0019715855623" target="_blank">
 														<img alt="" width="120px" src="images/sql_associate_badge.png">
 													</a>

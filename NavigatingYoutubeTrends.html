@@ -33,7 +33,7 @@
     /* Media query for screens smaller than 768px (typical mobile devices) */
 			@media only screen and (max-width: 768px) {
     			.major h1 {
-        			font-size: 1.1em; /* Maintain the font size for smaller screens */
+        			font-size: 1.0em; /* Maintain the font size for smaller screens */
         			word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
     			}
 			}
@@ -81,7 +81,6 @@
 									</header>									
 									<p style="font-size: 18px;">This research project was implemented using <strong>Python</strong>. The project was one of the <strong>winners</strong> of the <a href="https://app.datacamp.com/learn/competitions/youtube-videos?activeTab=competition-entries" target="_blank">DataCamp Competition</a>! 🏆</p>
 									<h3>Executive Summary</h3>	
-									<p>This report provides a comprehensive analysis of video engagement metrics across various categories, with a focus on identifying trends that drive audience interaction. The analysis began with data cleaning steps, including the removal of missing values and duplicates, followed by an exploration of data distributions and the handling of outliers. We observed significant skewness in the distribution of likes, comments, and views, which informed our decision to use median values for subsequent analyses.
 									<p>The task was to create a ranking model that could help identify trends in various video categories and recommend three best videos to promote an E-learning platform focused on Data & AI skills 🧠 You may find the complete code <a href = "https://github.com/annagromovich/Navigating-YouTube-Trends-for-Data-Science-AI/blob/main/YouTube.ipynb" target="_blank">here.</a></p>
 									<p>The datasets <strong>Videos Stats</strong> and <strong>Comments</strong> were modified from the original <a href="https://www.kaggle.com/datasets/advaypatil/youtube-statistics/data" target="_blank">source</a> on Kaggle. </p>
 
@@ -156,16 +155,9 @@
 									<p>For each category and sentiment type (positive or negative), I count the frequency of each word. The most frequent words are then visualized using word clouds, which provide an intuitive representation of word importance.</p>
 									<p>The result is not surprising with 'love', 'good' and 'well' - being the most common positive words and 'wrong', 'problem', 'war' and 'fail' - the most common negative ones.</p>
 									<span class="image main"><img src="images/pos neg.png" alt="" style="max-width: 800px;"/></span>
-									<p>To delve deeper, I also created bar graphs that display the most frequent positive and negative words for each specific category. These graphs highlight category-specific trends in sentiment expression:</p>
-									<ul>
-										<li><strong>Positive Words:</strong> Common positive words such as “thank,” “good,” “love,” and “great” are prevalent across most categories;</li>
-										<li><strong>Negative Words:</strong> Words like “bad,” “hard,” and “problem” are frequently found in negative comments across various categories.</li>
-									</ul>
-									<p>Only in one category - <strong>media & news</strong> negative words are more common than positive ones with words like "war", "lose" and "crime" being the most common.</p>
-									<span class="image main"><img src="images/pos neg cat.png" alt="" style="max-width: 800px;"/></span>
 
 									<h3>Development of a Video Ranking Model</h3>
-									<p>To develop a robust video ranking model, I utilized the ><strong>CatBoost Ranker</strong>, a powerful tool designed for ranking tasks. The model predicts a custom metric called <strong>relevance</strong>, which combines <strong>engagement metrics</strong> (likes, views, and comments) with a <strong>video sentiment score</strong> developed in a previous step.</p>
+									<p>To develop a robust video ranking model, I utilized the <strong>CatBoost Ranker</strong>, a powerful tool designed for ranking tasks. The model predicts a custom metric called <strong>relevance</strong>, which combines <strong>engagement metrics</strong> (likes, views, and comments) with a <strong>video sentiment score</strong> developed in a previous step.</p>
 									<p><strong>Data Preprocessing:</strong></p>
 									<ul>
 										<li><strong>Log Transformation:</strong> I applied a logarithmic transformation to the engagement metrics (likes, views, and comments) to normalize the data and reduce the impact of outliers.</li>
@@ -173,7 +165,9 @@
 										<li><strong>Relevance Calculation:</strong> The relevance score is a weighted sum of the normalized engagement metrics and the video sentiment score. This approach ensures that videos with high engagement and positive sentiment are ranked higher.</li>
 									</ul>
 									<p><strong>Model Training:</strong></p>
-									<p>I grouped videos by category to ensure that the model generates a separate ranking for each category.</p>
+									<ul>
+										<li>I grouped videos by category to ensure that the model generates a separate ranking for each category.</li>
+									</ul>
 									<p>The CatBoost Ranker was trained for 1,000 iterations using the YetiRank loss function, which is specifically optimized for ranking tasks. The model's performance was evaluated using the Normalized Discounted Cumulative Gain (NDCG) metric, achieving an impressive average NDCG score of <strong>0.9997</strong>, indicating highly accurate and meaningful rankings.</p>
 
 									<h3>Strategic Recommendation for E-learning Collaboration</h3>
