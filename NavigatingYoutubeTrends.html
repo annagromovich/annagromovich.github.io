@@ -1,0 +1,231 @@
+<!DOCTYPE HTML>
+<!--
+	Forty by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Navigating YouTube Trends | Anna Gromovich</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<style>
+			.image-container {
+				display: flex;
+				justify-content: space-between;
+				align-items: center; 
+			}
+	
+			.image-wrapper {
+				flex: 0 0 auto;
+			}
+			.major h1 {
+        		text-align: center;
+        		font-size: 2em;
+    		}
+
+			p {
+    			text-align: justify;
+			}
+
+    /* Media query for screens smaller than 768px (typical mobile devices) */
+			@media only screen and (max-width: 768px) {
+    			.major h1 {
+        			font-size: 1.1em; /* Maintain the font size for smaller screens */
+        			word-wrap: break-word; /* Allow long words to break and wrap onto the next line */
+    			}
+			}
+
+		</style>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Anna Gromovich</strong></a>
+						<nav>
+							<a href="#menu">Menu</a>
+						</nav>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<ul class="links">
+							<li><a href="index.html">Home</a></li>
+							<li><a href="NavigatingYoutubeTrends.html">Navigating YouTube Trends</a></li>
+							<li><a href="JustInTime.html">Just In Time</a></li>
+							<li><a href="PerfectPartyPlaylist.html">Perfect Party Playlist</a></li>
+							<li><a href="EcomGlobaldashApp.html">E-com Global Dash App</a></li>
+                            <li><a href="WarbyParker.html">Warby Parker</a></li>
+                            <li><a href="Codeflix.html">Codeflix</a></li>
+                            <li><a href="CoolTShirts.html">CoolTShirts</a></li>
+                            <li><a href="Aboutme.html">About me</a></li>
+						</ul>
+						<ul class="actions stacked">
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main" class="alt">
+
+						<!-- One -->
+							<section id="one">
+								<div class="inner">
+									<header class="major">
+										<h1>Navigating YouTube Trends for Data Science and AI 🎬</h1>
+									</header>									
+									<p style="font-size: 18px;">This research project was implemented using <strong>Python</strong>. The project was one of the <strong>winners</strong> of the <a href="https://app.datacamp.com/learn/competitions/youtube-videos?activeTab=competition-entries" target="_blank">DataCamp Competition</a>! 🏆</p>
+									<h3>Executive Summary</h3>	
+									<p>This report provides a comprehensive analysis of video engagement metrics across various categories, with a focus on identifying trends that drive audience interaction. The analysis began with data cleaning steps, including the removal of missing values and duplicates, followed by an exploration of data distributions and the handling of outliers. We observed significant skewness in the distribution of likes, comments, and views, which informed our decision to use median values for subsequent analyses.
+									<p>The task was to create a ranking model that could help identify trends in various video categories and recommend three best videos to promote an E-learning platform focused on Data & AI skills 🧠 You may find the complete code <a href = "https://github.com/annagromovich/Navigating-YouTube-Trends-for-Data-Science-AI/blob/main/YouTube.ipynb" target="_blank">here.</a></p>
+									<p>The datasets <strong>Videos Stats</strong> and <strong>Comments</strong> were modified from the original <a href="https://www.kaggle.com/datasets/advaypatil/youtube-statistics/data" target="_blank">source</a> on Kaggle. </p>
+
+									<h4>What was done:</h4>
+									<ul>
+										<li><strong>Video Classification:</strong> I streamlined the initial 41 video categories into broader, more manageable groups to improve clarity. This regrouping ensured all the videos are classified according to their main topic and decreased the number of groups to 14.</li>
+										<li><strong>Creation of Video Engagement Index:</strong> I developed an engagement index to assess the popularity of videos by combining likes, comments, and views. This index was instrumental in identifying the most common words in the titles of highly popular videos within each category, revealing content trends that resonate with audiences.</li>
+										<li><strong>Sentiment Analysis of Comments:</strong> Employing a logistic regression model, I conducted a sentiment analysis of video comments, classifying them into positive, neutral, and negative sentiments. This analysis offered a detailed understanding of viewer reactions and highlighted the emotional impact of different video categories.</li>
+										<li><strong>Overall Sentiment Score Calculation:</strong> To reflect the influence of audience engagement, I developed an overall sentiment score for each video. This score was derived from the sentiment predictions of individual comments, with greater weight assigned to comments that received more likes, indicating a higher impact on the overall perception of the video.</li>
+										<li><strong>Analysis of Common Positive and Negative Words:</strong> I identified the most frequently occurring positive and negative words in comments for each video category. This analysis provided insights into the sentiment trends and key themes that are prevalent in viewer feedback across various categories.</li>
+										<li><strong>Video Ranking Model Development:</strong> A robust ranking model was created using CatBoost Ranker, focusing on a relevance parameter. This parameter was a composite index derived from engagement metrics and the overall sentiment score. The model effectively ranks videos in each category based on their engagement and sentiment scores, ensuring the identification of top-performing content.</li>
+									</ul>
+
+									<h4>What was revealed:</h4>
+									<ul>
+										<li><strong>Engagement Trends:</strong> The analysis revealed that <strong>tutorials & how to, entertainment, and food</strong> videos are the most engaging, with the highest median likes and comments. Videos featuring <strong>animals</strong> garnered the most views, while <strong>media & news</strong> videos attracted the highest number of comments.</li>
+										<li><strong>Content Themes:</strong> Popular video titles often included specific keywords relevant to their category. For instance, "Gordon Ramsay" and "mukbang" were frequent in the food category, while terms like "machine learning" and "Python" were prevalent in data & AI skills videos. Content creators are advised to focus on these trending topics to maximize engagement.</li>
+										<li><strong>Sentiment Insights:</strong> Positive comments dominated the dataset, especially in categories like <strong>tutorials & how to and entertainment</strong>. Conversely, <strong>media & news</strong> videos were predominantly met with negative feedback, likely due to the nature of the content.</li>
+										<li><strong>Engagement-Weighted Sentiment Analysis:</strong> By weighting comments based on their like counts, it was ensured that comments with higher engagement had a greater impact on the overall video sentiment score. This methodology provided a more accurate reflection of the audience's sentiment towards each video.</li>
+										<li><strong>Top Video Recommendations:</strong> Our ranking model has identified high-performing videos in the data & AI skills category, highlighting the demand for educational content. Notably, videos centered around machine learning for beginners are particularly popular (which was found during the videos' titles analysis and supported by model's predictions).My final recommendations include two videos, that feature machine learning for beginners and one video featuring AI skills from Google engineer. I recommend emphasizing the creation and promotion of content that is not only relevant but also reflects the latest advancements and trends in the field. Ensuring that content is fresh and aligned with current industry practices will help in maintaining viewer interest and authority in fast-evolving areas like artificial intelligence.</li>
+									</ul>
+
+									<h3>Exploratory Data Analysis of YouTube Trends</h3>
+									<p>After the data cleaning process, which included handling missing data, erroneous data and deletion of duplicates we were left with <strong>7 columns & 1837 rows</strong> in <strong>Videos Stats</strong> dataset and <strong>4 columns & 17876 rows</strong> in <strong>Comments</strong> dataset.</p>
+									<p>The analysis indicated that the distribution of <strong>Likes, Comments, and Views</strong> is highly skewed. Given the significant number of outliers, simply removing these rows may be not a good decision, as it would result in the loss of valuable information.</p>
+									<span class="image main"><img src="images/skewed.png" alt="" style="max-width: 800px; max-height: 800px;"/></span>
+									<p>During the analysis, I observed that some of the videos were incorrectly labeled with the keyword. To ensure accurate labeling, I have reclassified these videos. Initially, there were 41 video categories, which was quite extensive. To improve clarity and manageability, I decided to regroup the videos by merging similar categories and reducing the overall number of categories.</p>
+									<p>For instance, the <strong>bed</strong> category initially included a variety of videos, ranging from music to entertainment. I consolidated the musical compositions into a music category and created a distinct entertainment category for the entertainment videos.</p>
+									<p>The number of video categories after regrouping: <strong>14</strong>.</p>
+									<p>The graph below illustrates the median engagement metrics <strong>Likes, Views, and Comments</strong> across different video categories. The median was chosen over the mean due to the skewness in the data distribution.</p>
+									<p>As depicted in the graph:</p>
+									<ul>
+										<li><strong>Highest Likes: </strong> Videos from the <strong>tutorials & how-to, entertainment, and food</strong> categories garner the most likes. These categories seem to resonate well with audiences who appreciate instructional and enjoyable content.</li>
+										<li><strong>Highest Comments: Media & news</strong> videos receive the most comments. This is expected, as news content typically sparks substantial discussion. Additionally, tutorials & how-to and interview videos also attract significant comment engagement.</li>
+										<li><strong>Highest Views: </strong> The <strong>animals</strong> category leads in median views. After all, who can resist watching adorable kitten videos? <strong>Sports and tutorials & how-to</strong> videos also rank high in viewership.</li>
+										<li><strong>Tutorials & how-to</strong> videos are particularly noteworthy, excelling in all engagement metrics, highlighting their broad appeal and utility. On the contrary, <strong>business & finance</strong> videos show the lowest engagement, with fewer likes, views, and comments on average.</li>
+									</ul>
+									<span class="image main"><img src="images/median.png" alt="" style="max-width: 800px; max-height: 800px;"/></span>
+									<p>To identify which words frequently appear in the titles of popular videos within each category, I conducted an analysis using engagement metrics. My aim was to understand the content trends that drive audience engagement in different video categories. The analysis involved creating an engagement index that incorporates <strong>Likes, Comments, and Views</strong> from each video. The chosen weights for these metrics are as follows:</p>
+									<ul>
+										<li>LIKE_WEIGHT: 1.0</li>
+										<li>COMMENT_WEIGHT: 2.0</li>
+										<li>VIEW_WEIGHT: 0.5</li>
+									</ul>
+									<p>These weights reflect the relative significance of each metric. <strong>Comments</strong> are given the highest weight because they typically indicate a stronger level of engagement and emotional response compared to likes and views. <strong>Likes</strong> are considered to represent a moderate level of positive engagement, while <strong>views</strong>, having the lowest weight, signify the least engagement as they merely indicate that the video was watched.</p>
+									<p>Below, you will find word clouds showcasing the most common words found in the titles of popular videos across various categories. These visualizations provide insights into the themes and topics that resonate most with audiences in each category.</p>
+									<span class="image main"><img src="images/word clouds.png" alt="" style="max-width: 800px;"/></span>
+									<p>The word clouds enabled a deeper understanding of the popularity trends within each video category. For example, in the <strong>Food</strong> category, words like "Gordon", "Ramsay", "food", and "mukbang" frequently appear in the titles of popular videos. This suggests that content related to celebrity chef Gordon Ramsay and eating shows is particularly engaging for this audience. In contrast, popular videos in the <strong>Data & AI Skills</strong> category often include words such as "machine", "learning", and "science", "course", "python", "beginner". This indicates a strong interest in machine learning and introductory Python courses among viewers, suggesting that content creators in this field might benefit from focusing on videos dedicated to machine learning and computer science, as well as beginner-level Python tutorials to attract and engage their audience effectively.</p>
+									
+									<h3>Sentiment Analysis</h3>
+									<p>In the graph below, you can see the distribution of positive, negative, and neutral comments in the provided dataset. It is evident that the dataset is quite imbalanced, with positive comments making up approximately 62%, negative comments around 12%, and neutral comments about 26% of the total data.</p>
+									<span class="image main"><img src="images/comments sent.png" alt="" style="max-width: 600px; max-height: 500px;"/></span>
+									<p>To analyze the sentiment of comments, I developed a machine learning model using logistic regression to calculate the sentiment score for each comment. The final model achieved an accuracy of approximately <strong>0.73</strong> on the test set and <strong>0.75</strong> on the training set. This indicates a well-generalized model with minimal overfitting. The model performs well in predicting positive sentiment comments, which represent about 62% of the dataset. However, it struggles with predicting negative and neutral sentiment comments, indicating a potential area for improvement.</p>
+									<span class="image main"><img src="images/model perf.png" alt="" style="max-width: 600px; max-height: 500px;"/></span>
+									<p>Now we can leverage the comments' predicted sentiment scores from our model to compute an <strong>overall sentiment score for each video</strong>. Given that some comments garner significantly more likes than others, it’s crucial to assign greater weight to these highly liked comments, as they likely have a more substantial influence on the overall perception of the video.</p>
+									<p>The approach involves several steps:</p>
+									<ul>
+										<li><strong>Weighting Sentiment Based on Engagement:</strong> I normalize the number of likes each comment receives and then multiply this normalized value by the sentiment score derived from our model. This ensures that comments with more likes contribute more to the overall sentiment score, reflecting their higher engagement and potential impact.</li>
+										<li><strong>Aggregating Sentiment for Each Video:</strong> I aggregate the weighted sentiment scores for all comments associated with each video. By summing these scores, we get a cumulative sentiment value for each video that accounts for both the sentiment and the engagement level of individual comments.</li>
+										<li><strong>Normalizing by Total Engagement:</strong> To balance the influence across videos, we divide the aggregated weighted sentiment by the total number of normalized likes. This step ensures that the overall sentiment score reflects the average sentiment in proportion to the engagement level of the comments.</li>
+									</ul>
+									<p>In the graph below, you can observe the distribution of video sentiment across different categories. Across most categories, the trend is relatively consistent, with the majority of videos being classified as positive. This indicates a general positive reception in most content categories, where viewers tend to leave more favorable comments.</p>
+									<p>An interesting outlier is the <strong>media & news</strong> category. Here, approximately 90% of the videos are classified as negative, with only a small fraction being neutral or positive. This could suggest that news content often elicits stronger negative reactions, possibly due to the nature of the news being reported or the emotional impact of the content.</p>
+									<span class="image main"><img src="images/video sent.png" alt="" style="max-width: 600px; max-height: 500px;"/></span>
+									<p>In the following section, we aim to identify and visualize the most frequent positive and negative words used in video comments across various categories. Neutral sentiments are excluded to focus on the polar extremes of viewer feedback.</p>
+									<p>To ensure accurate sentiment analysis, I first preprocess the text of each comment, which included tokenization, lemmatization, stop words removal, and filtering out non-alphabetic characters. Then, using the VADER sentiment analysis tool, I calculate the polarity score for each word. To ensure that only distinctly positive or negative words are considered, I apply polarity thresholds:</p>
+									<ul>
+										<li><strong>Positive Words:</strong> Words with a polarity score above 0.1;</li>
+										<li><strong>Negative Words:</strong> Words with a polarity score below -0.1.</li>
+									</ul>
+									<p>This filtering helps in excluding words that might not convey strong sentiment, thus focusing on words that clearly reflect positive or negative sentiments.</p>
+									<p>For each category and sentiment type (positive or negative), I count the frequency of each word. The most frequent words are then visualized using word clouds, which provide an intuitive representation of word importance.</p>
+									<p>The result is not surprising with 'love', 'good' and 'well' - being the most common positive words and 'wrong', 'problem', 'war' and 'fail' - the most common negative ones.</p>
+									<span class="image main"><img src="images/pos neg.png" alt="" style="max-width: 800px;"/></span>
+									<p>To delve deeper, I also created bar graphs that display the most frequent positive and negative words for each specific category. These graphs highlight category-specific trends in sentiment expression:</p>
+									<ul>
+										<li><strong>Positive Words:</strong> Common positive words such as “thank,” “good,” “love,” and “great” are prevalent across most categories;</li>
+										<li><strong>Negative Words:</strong> Words like “bad,” “hard,” and “problem” are frequently found in negative comments across various categories.</li>
+									</ul>
+									<p>Only in one category - <strong>media & news</strong> negative words are more common than positive ones with words like "war", "lose" and "crime" being the most common.</p>
+									<span class="image main"><img src="images/pos neg cat.png" alt="" style="max-width: 800px;"/></span>
+
+									<h3>Development of a Video Ranking Model</h3>
+									<p>To develop a robust video ranking model, I utilized the ><strong>CatBoost Ranker</strong>, a powerful tool designed for ranking tasks. The model predicts a custom metric called <strong>relevance</strong>, which combines <strong>engagement metrics</strong> (likes, views, and comments) with a <strong>video sentiment score</strong> developed in a previous step.</p>
+									<p><strong>Data Preprocessing:</strong></p>
+									<ul>
+										<li><strong>Log Transformation:</strong> I applied a logarithmic transformation to the engagement metrics (likes, views, and comments) to normalize the data and reduce the impact of outliers.</li>
+										<li><strong>Normalization:</strong> Following the log transformation, I normalized these metrics using MinMaxScaler, scaling the data to a range between 0 and 1.</li>
+										<li><strong>Relevance Calculation:</strong> The relevance score is a weighted sum of the normalized engagement metrics and the video sentiment score. This approach ensures that videos with high engagement and positive sentiment are ranked higher.</li>
+									</ul>
+									<p><strong>Model Training:</strong></p>
+									<p>I grouped videos by category to ensure that the model generates a separate ranking for each category.</p>
+									<p>The CatBoost Ranker was trained for 1,000 iterations using the YetiRank loss function, which is specifically optimized for ranking tasks. The model's performance was evaluated using the Normalized Discounted Cumulative Gain (NDCG) metric, achieving an impressive average NDCG score of <strong>0.9997</strong>, indicating highly accurate and meaningful rankings.</p>
+
+									<h3>Strategic Recommendation for E-learning Collaboration</h3>
+									<p>To identify the top videos in the <strong>data & AI skills</strong> category, I used our model to rank the videos based on relevance scores. Below are the top three videos:</p>
+									<span class="image main"><img src="images/recom.png" alt="" style="max-width: 800px;"/></span>
+									<p>The selected videos have impressive engagement metrics: likes range from 177K to 463K, comments from 6K to 21K, and views from 7M to nearly 12M. These videos are focused on machine learning for beginners, a topic that we identified as highly popular from our video titles analysis (see step 2).</p>
+									<p>However, our task is to promote an E-Learning platform that emphasizes both Data and AI skills. Notably, none of these top-ranked videos specifically addresses AI skills, a highly relevant and trending topic. Furthermore, the third video, "2020 Machine Learning Roadmap (95% valid for 2022)", although popular, may be outdated for 2024. To ensure relevance and coverage of AI, we will replace this video with the next highest-ranked video (rank 4), titled "Google Engineer on His Sentient AI Claim". This video is well-received with 13K comments and has a positive sentiment, aligning well with our focus on contemporary AI topics.</p>
+									<span class="image main"><img src="images/recs final.png" alt="" style="max-width: 800px;"/></span>
+
+
+
+										<p><strong>You may check the complete code following the link below.</strong></p>
+										<ul class="actions">
+										<li><a href="https://github.com/annagromovich/Navigating-YouTube-Trends-for-Data-Science-AI/blob/main/YouTube.ipynb" class="button next" target="_blank">See details</a></li>
+									</ul>
+																	</div>
+							</section>
+
+					</div>
+
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							<ul class="icons">
+								<li><a href="https://github.com/annagromovich" class="icon brands alt fa-github" target="_blank"><span class="label">GitHub</span></a></li>
+								<li><a href="https://www.linkedin.com/in/anna-gromovich-681039236/" class="icon brands alt fa-linkedin-in" target="_blank"><span class="label">LinkedIn</span></a></li>
+                                <li>
+                                    <a href="mailto:annegromovich@gmail.com" class="icon brands alt">
+                                        <span class="icon solid alt fa-envelope"></span>
+                                    </a>
+                                </li>
+							</ul>
+							<ul class="copyright">
+								<li>&copy; 2024 Anna Gromovich. All rights reserved.</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+			
+			
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
