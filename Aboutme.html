@@ -37,7 +37,18 @@
 			}
 			.centered-list li {
 				display: flex;
+				align-items: flex-start; /* new */
 				align-items: center; /* Center items vertically */
+			}
+			.centered-list li strong {   /*new */
+				min-width: 200px; /* Fixed width for headers */
+				padding-right: 10px; /* Space between header and icons */
+			}
+		
+			.centered-list li .icons {  /* new*/
+				display: flex;
+				flex-wrap: wrap;
+				align-items: center;
 			}
 			.centered-list img {
 				margin-left: 10px; /* Add some space between text and image */
@@ -107,46 +118,52 @@
                                             <h3>Technical Experience</h3>
                                         </header>
 										<ul class="centered-list">
-											<li><strong>Programming Languages</strong>: 
-												<a href="https://www.python.org/" target="_blank">
-													<img alt="Python" width="40px" src="images/python.png">
-												</a>
-												<a href = "https://www.postgresql.org/" target="_blank">
-													<img alt="" width="40px" src="images/postgresql.png">
-												</a>
-												<a href="https://html.com/" target="_blank">
-													<img alt="" width="40px" src="images/html5.png">
-												</a>
-												<a href="https://html.com/" target="_blank">
-													<img alt="(basic)" width="40px" src="images/css.png">
-												</a>
+											<li><strong>Programming Languages</strong>
+												<div class="icons"> 
+													<a href="https://www.python.org/" target="_blank">
+														<img alt="Python" width="40px" src="images/python.png">
+													</a>
+													<a href = "https://www.postgresql.org/" target="_blank">
+														<img alt="" width="40px" src="images/postgresql.png">
+													</a>
+													<a href="https://html.com/" target="_blank">
+														<img alt="" width="40px" src="images/html5.png">
+													</a>
+													<a href="https://html.com/" target="_blank">
+														<img alt="(basic)" width="40px" src="images/css.png">
+													</a>
+												</div>
 											</li>
-											<li><strong>Data Processing Tools</strong>: 
-												<a href="https://pandas.pydata.org/" target="_blank">
-													<img alt="" width="40px" src="images/pandas white.ico">
-												</a>
-												<a href="https://numpy.org/" target="_blank">
-													<img alt="" width="35px" src="images/numpy.png">
-												</a>
+											<li><strong>Data Processing Tools</strong> 
+												<div class="icons">
+													<a href="https://pandas.pydata.org/" target="_blank">
+														<img alt="" width="40px" src="images/pandas white.ico">
+													</a>
+													<a href="https://numpy.org/" target="_blank">
+														<img alt="" width="35px" src="images/numpy.png">
+													</a>
+												</div>
 											</li>
-											<li><strong>Visualization Tools</strong>: 
-												<a href="https://matplotlib.org/" target="_blank">
-													<img alt="" width="40px" src="images/matplotlib.png">
-												</a>
-												<a href="https://seaborn.pydata.org/" target="_blank">
-													<img alt="" width="40px" src="images/seaborn.png">
-												</a>
-												<a href="https://plotly.com/" target="_blank">
-													<img alt="" width="40px" src="images/plotly.png">
-												</a>
-												<a href="https://www.tableau.com/" target="_blank">
-													<img alt="" width="73px" src="images/tableau.jpg">
-												</a>
+											<li><strong>Visualization Tools</strong>
+												<div class="icons">
+													<a href="https://matplotlib.org/" target="_blank">
+														<img alt="" width="40px" src="images/matplotlib.png">
+													</a>
+													<a href="https://seaborn.pydata.org/" target="_blank">
+														<img alt="" width="40px" src="images/seaborn.png">
+													</a>
+													<a href="https://plotly.com/" target="_blank">
+														<img alt="" width="40px" height="40px" src="images/plotly.png">
+													</a>
+													<a href="https://www.tableau.com/" target="_blank">
+														<img alt="" width="65px" height="40px" src="images/TB.png">
+													</a>
+												</div>
 											</li>
-											<li><strong>Machine Learning Tools</strong>: 
-												<div class="ml-tools">
+											<li><strong>Machine Learning Tools</strong> 
+												<div class="ml-tools icons">
 													<a href="https://scikit-learn.org/stable/" target="_blank">
-														<img alt="" width="74px" src="images/scikitlearn.png">
+														<img alt="" width="74px" height="40px" src="images/scikit.png">
 													</a>
 													<a href="https://www.statsmodels.org/stable/index.html" target="_blank">
 														<img alt="" width="55px" src="images/stat.svg">
@@ -161,11 +178,13 @@
 														<img alt="" width="40px" src="images/pyspark.png">
 													</a>
 												</div>	
-											</li>										</li>
-											<li><strong>Version Control</strong>:
-												<a href="https://git-scm.com/" target="_blank">
-													<img alt="" width="40px" src="images/git (2).png">
-												</a>
+											</li>								
+											<li><strong>Version Control</strong>
+												<div class="icons">
+													<a href="https://git-scm.com/" target="_blank">
+														<img alt="" width="40px" src="images/git (2).png">
+													</a>
+												</div>
 											</li>
 										</ul>
                                     <div class="right-aligned-heading">
